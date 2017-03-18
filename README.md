@@ -1,7 +1,5 @@
 # vue-wechat
 
-> y
-
 ## Build Setup
 
 ``` bash
