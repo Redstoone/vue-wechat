@@ -27,7 +27,10 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        include: [
+          path.resolve(__dirname, "./static/js")
+        ],
+        exclude: '/node_modules/'
       },
       {
         test: /\.(eot(|\?v=.*)|woff(|\?v=.*)|woff2(|\?v=.*)|ttf(|\?v=.*)|svg(|\?v=.*))$/,
@@ -58,10 +61,10 @@ module.exports = {
     port: 8080,
     host: '0.0.0.0',
     proxy: {
-      '/api/*':{
-          target: 'http://music.163.com',
-          changeOrigin: true,
-          secure: false,
+      '/api/*': {
+        target: 'http://music.163.com',
+        changeOrigin: true,
+        secure: false,
       },
     }
   },
